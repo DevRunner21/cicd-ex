@@ -1,6 +1,6 @@
 cd /home/ubuntu/app
 
-echo $ Copy Jar File >> /home/ubuntu/app/log/deploy.log
+echo $ Copy Jar File >> /home/ubuntu/app/deploy.log
 cp /home/ubuntu/app/deploy-ex/deploy/*-SNAPSHOT.jar .
 
 BUILD_JAR=$(ls /home/ubuntu/app/*-SNAPSHOT.jar)
@@ -8,7 +8,7 @@ DEPLOY_PATH=/home/ubuntu/app/
 JAR_NAME=$(basename $BUILD_JAR)
 HOME=/home/ubuntu
 
-echo "> build 파일명: $JAR_NAME" >> /home/ubuntu/app/log/deploy.log
+echo "> build 파일명: $JAR_NAME" >> /home/ubuntu/app/deploy.log
 
 echo "> 현재 실행중인 애플리케이션 pid 확인" >> /home/ubuntu/app/deploy.log
 CURRENT_PID=$(pgrep -f $JAR_NAME)
